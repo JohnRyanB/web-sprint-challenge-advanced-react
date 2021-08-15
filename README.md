@@ -40,9 +40,9 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 
   Display a list of the plants from the server. This should be done in the class component `PlantList`. **Unlike other projects, the local server used here can not be accessed through the browser. It is started automatically and without the need for starting a server.js file. Feel free to ignore any messages related to MSW or mock service workers. For this and the rest of your sprint challenges, test the functioning of the server directly through your axios calls.**
 
-* [ ] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants.`
-* [ ] Set the data to a state property called `this.state.plants.`
-* [ ] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart.
+* [*] In the `PlantList` class component, fetch data from the server you now have running - the data can be fetched from `http://localhost:3333/plants.`
+* [*] Set the data to a state property called `this.state.plants.`
+* [*] The render function is already built and styled. Once the data is on the state, you will see the list of plants, and you will have the functionality to add a plant to the cart.
 
 #### Shopping Cart
 
@@ -52,8 +52,8 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 
   The form is working, but it is currently controlled by local stateful logic. We want to control this form with a custom hook.
 
-* [ ] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic.
-* [ ] You built a useForm hook in the guided project this week. You will probably need to use that as a guide to complete this step. However, try and build it out first before you peek at the guided project. And *do not* copy/paste directly from the guided project!_
+* [*] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic.
+* [*]You built a useForm hook in the guided project this week. You will probably need to use that as a guide to complete this step. However, try and build it out first before you peek at the guided project. And *do not* copy/paste directly from the guided project!_
 
 #### Testing the Checkout Form
 * [ ] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
@@ -102,10 +102,26 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.
 
-1. What are the main differences between a stateful and a functional component?
+1. What are the main differences between a stateful and a functional component? 
+
+A functional component does not utilize state directly, it just accepts data as props as arguments and returns a React element. You want to use functional components when state is not required to be changed for app simplicity and reusability
+
+A stateful(Class) component utilizes state and requires a render method which returns HTML. You can also use React Lifecycle methods with stateful comopnents (componentDidMount/componentWillUpdate/componentWillUnmount) You extend React in stateful components. You want to use a stateful component when state is being utilized/changed
 
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
 
+ componentWillMount is called before the render method is executed, meaning that setting a state here does not trigger a rerender. componentWillUpdate is invoked whenever new props are passed to the component or when the state is changed.
+
 3. Define stateful logic.
 
+Stateful Logic is storing values, usually user entered, and performing logic operations on those values.
+
+
 4. What are the three step of creating a successful test? What is done in each phase?
+Arrange, Act, Assert
+
+When you Arrange, you are setting up the test case i.e. rendering the page and defining your variables and elements 
+
+Act is where you manipulate the arranged elements, i.e. clicking buttons or typing in fields
+
+Assert is where you check the results of your 'Act' phase actions to make sure you are getting the desired results. i.e. ensuring a email field throws the proper error messages if an invalid format email address is entered.
